@@ -9,6 +9,7 @@ const objectDestructuring = {
 };
 
 const gameLoop = {
+  // cant write "suspects"
   suspects: [
     {
       name: "rusty",
@@ -20,6 +21,8 @@ const gameLoop = {
     }
   ]
 };
+
+console.log(gameLoop.suspects);
 const createObj = () => {
   myObject["character"] = ["John", "Roger", "TheRandomGuy"];
   myObject["room"] = ["kitchen", "bedroom", "livingroom"];
@@ -52,6 +55,15 @@ const loopNestedArray = () => {
 
 loopNestedArray();
 
+const extractGuilty = () => {
+  for (let i = 0; i < gameLoop.suspects.length; i++) {
+    if (gameLoop.suspects[i].name === "Miss Scarlet") {
+      console.log(gameLoop.suspects[i].name + " is guilty");
+    }
+  }
+};
+
+extractGuilty();
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
 <div>
