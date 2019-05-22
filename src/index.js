@@ -7,6 +7,19 @@ const objectDestructuring = {
   room: "bathroom",
   weapon: "candlestick"
 };
+
+const gameLoop = {
+  suspects: [
+    {
+      name: "rusty",
+      color: "orange"
+    },
+    {
+      name: "Miss Scarlet",
+      color: "red"
+    }
+  ]
+};
 const createObj = () => {
   myObject["character"] = ["John", "Roger", "TheRandomGuy"];
   myObject["room"] = ["kitchen", "bedroom", "livingroom"];
@@ -30,6 +43,14 @@ const destructuring = () => {
 };
 
 destructuring();
+
+const loopNestedArray = () => {
+  for (let i = 0; i < gameLoop.suspects.length; i++) {
+    console.log(gameLoop.suspects[i]);
+  }
+};
+
+loopNestedArray();
 
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
