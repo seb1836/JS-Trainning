@@ -1,5 +1,5 @@
 import "./styles.css";
-import _ from 'underscore'
+import _ from "underscore";
 
 const myObject = {};
 
@@ -77,19 +77,27 @@ extractGuilty();
 
 destructuringColors();
 
-const eachExercise = ()=>{
-
-  _.each = function(list,callback){
-  for(i=0;i<list.length;i++){
-    callback(){
-      console.log(list[i])
+_.each = function(list, callback) {
+  if (Array.isArray(list)) {
+    for (let i = 0; i < list.length; i++) {
+      callback(list[i], i, list);
+      console.log(list[i]);
+    }
+  } else {
+    for (const key in list) {
+      callback(list[key], key, list);
     }
   }
-    
+};
+
+_.each(["jean", "claude", "van", "damme"], function(name, i, list) {
+  console.log(list, "array");
+  if (list[i + 1]) {
+    console.log(name, "is younger than", list[i + 1]);
+  } else {
+    console.log(name, "is the oldest");
   }
-
-
-}
+});
 
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
@@ -99,26 +107,25 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-const props = { name: 'Seb', age: 34, gender: 'non-binary'}
+const props = { name: "Seb", age: 34, gender: "non-binary" };
 
-const {name, age} = props
+const { name, age } = props;
 
 // const { name, age } = { name: 'Mickael', age: 34, gender: 'non-binary' }
 
-const superLol = { first: true, second: false }
-const { first, second} = { first: true, second: false}
-const { first1, second1 } = { first: true, second: false }
-const { first2, second2 } = { first: true, second: false }
-const { first3, second3 } = { first: true, second: false }
+const superLol = { first: true, second: false };
+const { first, second } = { first: true, second: false };
+const { first1, second1 } = { first: true, second: false };
+const { first2, second2 } = { first: true, second: false };
+const { first3, second3 } = { first: true, second: false };
 
-
-const { first4, second4 } = superLol
+const { first4, second4 } = superLol;
 
 const frostmourne = {
   weight: 150,
-  dmg: 9979879876896986998667869767967796986,
-}
+  dmg: 9979879876896986998667869767967796986
+};
 
-const { weight, dmg: connard } = frostmourne
+const { weight, dmg: connard } = frostmourne;
 
-console.log('RENAMING', weight, connard)
+console.log("RENAMING", weight, connard);
