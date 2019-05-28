@@ -1,5 +1,6 @@
 import "./styles.css";
 import _ from "underscore";
+import test from "./test";
 
 const myObject = {};
 
@@ -99,6 +100,51 @@ _.each(["jean", "claude", "van", "damme"], function(name, i, list) {
   }
 });
 
+const mesCOuilles = (array, cb) => {
+  console.log("ENTERING MAP");
+  if (Array.isArray(array)) {
+    const newArray = [];
+    for (let i = 0; i < array.length; i++) {
+      console.log("LOOP :", i);
+      const updatedElement = cb(array[i], i, array);
+      newArray.push(updatedElement);
+    }
+    console.log("RETURNING NEW ARRAY");
+    return newArray;
+  } else {
+    for (const key in array) {
+      cb(array[key], key, array);
+    }
+  }
+};
+
+const numberArray = [0, 1, 2];
+console.log(
+  "MyMap",
+  _.map(numberArray, function(element) {
+    //recheck le return//
+    console.log("UPDATING ELEMENT");
+    return element + 1;
+  }),
+  numberArray
+);
+
+const originalArray = ["gun", "hammer", "axe", "spear", "sword", "staff"];
+console.log(
+  _.map(originalArray, function(weapon, i, arraydebase) {
+    //recheck le return//
+    return "broken " + weapon;
+  }),
+  originalArray
+);
+
+// console.log(
+//   _.map(
+//     ["gun", "hammer", "axe"],
+//     (weapon, i, list) => (list[i] = "broken " + weapon)
+//   )
+// );
+
 document.getElementById("app").innerHTML = `
 <h1>Hello Vanilla!</h1>
 <div>
@@ -128,4 +174,4 @@ const frostmourne = {
 
 const { weight, dmg: connard } = frostmourne;
 
-console.log("RENAMING", weight, connard);
+// console.log("RENAMING", weight, connard);
