@@ -4,6 +4,20 @@ import test from "./test";
 
 const myObject = {};
 
+const videoData = [
+  {
+    name: "billy",
+    present: true
+  },
+  { name: "batman", present: true },
+  { name: "superman", present: false }
+];
+
+const newarray = _.filter(videoData, function(name, i) {
+  return videoData[i].present;
+});
+console.log(newarray);
+
 const objectDestructuring = {
   name: "Rusty",
   room: "bathroom",
@@ -100,16 +114,20 @@ _.each(["jean", "claude", "van", "damme"], function(name, i, list) {
   }
 });
 
-const mesCOuilles = (array, cb) => {
+const MyMap = (array, cb) => {
   console.log("ENTERING MAP");
   if (Array.isArray(array)) {
     const newArray = [];
-    for (let i = 0; i < array.length; i++) {
-      console.log("LOOP :", i);
-      const updatedElement = cb(array[i], i, array);
+    /*for (let i = 0; i < array.length; i++) {
+       console.log("LOOP :", i);
+       const updatedElement = cb(array[i], i, array);
+       newArray.push(updatedElement);
+     }
+     console.log("RETURNING NEW ARRAY");
+     return newArray;*/
+    _.each(array, function(updatedElement, i, list) {
       newArray.push(updatedElement);
-    }
-    console.log("RETURNING NEW ARRAY");
+    });
     return newArray;
   } else {
     for (const key in array) {
@@ -138,26 +156,26 @@ console.log(
   originalArray
 );
 
-// console.log(
-//   _.map(
-//     ["gun", "hammer", "axe"],
-//     (weapon, i, list) => (list[i] = "broken " + weapon)
-//   )
-// );
+console.log(
+  _.map(
+    ["gun", "hammer", "axe"],
+    (weapon, i, list) => (list[i] = "broken " + weapon)
+  )
+);
 
 document.getElementById("app").innerHTML = `
-<h1>Hello Vanilla!</h1>
-<div>
-  We use Parcel to bundle this sandbox, you can find more info about Parcel
-  <a href="https://parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
-</div>
-`;
+ <h1>Hello Vanilla!</h1>
+ <div>
+   We use Parcel to bundle this sandbox, you can find more info about Parcel
+   <a href="https:parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
+ </div>
+ `;
 
 const props = { name: "Seb", age: 34, gender: "non-binary" };
 
 const { name, age } = props;
 
-// const { name, age } = { name: 'Mickael', age: 34, gender: 'non-binary' }
+//const { name, age } = { name: 'Mickael', age: 34, gender: 'non-binary' }
 
 const superLol = { first: true, second: false };
 const { first, second } = { first: true, second: false };
@@ -174,4 +192,12 @@ const frostmourne = {
 
 const { weight, dmg: connard } = frostmourne;
 
-// console.log("RENAMING", weight, connard);
+const getFirstName = () => {
+  return "Seb";
+};
+
+const getLastName = () => {
+  return "PennaK";
+};
+
+console.log("RENAMING", weight, connard);
