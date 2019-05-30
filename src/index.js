@@ -16,13 +16,23 @@ const videoData = [
 const newarray = _.filter(videoData, function(name, i) {
   return videoData[i].present;
 });
-console.log(newarray);
+console.log(newarray, "filterrrrrr");
 
 const objectDestructuring = {
   name: "Rusty",
   room: "bathroom",
   weapon: "candlestick"
 };
+
+const newarray2 = _.filter(videoData, function(name, i) {
+  return videoData[i].present;
+});
+
+const map = _.map(newarray2, function(name, i) {
+  return videoData[i].name;
+});
+console.log(newarray, "filterrrrrr");
+console.log(map, "MAAAAP");
 
 const gameLoop = {
   // cant write "suspects"
@@ -135,8 +145,22 @@ const MyMap = (array, cb) => {
     }
   }
 };
+const myfilter = (array, cb) => {
+  const newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (cb(array[i], i, array)) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+};
 
 const numberArray = [0, 1, 2];
+
+myfilter(numberArray, (element, i) => {
+  return element > 0;
+});
+
 console.log(
   "MyMap",
   _.map(numberArray, function(element) {
