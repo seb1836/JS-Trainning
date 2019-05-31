@@ -24,12 +24,12 @@ const objectDestructuring = {
   weapon: "candlestick"
 };
 
-const newarray2 = _.filter(videoData, function(name, i) {
-  return videoData[i].present;
+const newarray2 = _.filter(videoData, function(value, i) {
+  return value.present;
 });
 
-const map = _.map(newarray2, function(name, i) {
-  return videoData[i].name;
+const map = _.map(newarray2, function(value, i) {
+  return value.name;
 });
 console.log(newarray, "filterrrrrr");
 console.log(map, "MAAAAP");
@@ -186,6 +186,28 @@ console.log(
     (weapon, i, list) => (list[i] = "broken " + weapon)
   )
 );
+
+const createTuple = (a, b, c, d) => {
+  console.log(arguments, "AAArguments");
+  return [[a, c], [b, d]];
+};
+
+const add = function(a, b = 2) {
+  console.log(arguments); //logs [3]
+  return a + b;
+};
+console.log(add(3, 2)); //5??
+
+function addES5(a, b = 2) {
+  console.log(arguments, "es5");
+  return a + b;
+}
+
+// a recheck mettre plus de parametres que prevue ne fais pas
+// planter la function
+console.log(addES5(3, 5, "ffff", "es5"));
+
+createTuple("It", "be", "could", "anyone", "no one");
 
 document.getElementById("app").innerHTML = `
  <h1>Hello Vanilla!</h1>
