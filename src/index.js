@@ -2,7 +2,11 @@ import "./styles.css";
 import _ from "underscore";
 import test from "./test";
 
-const myObject = {};
+const myObject = {
+  place: "bathroom",
+  time: "8pm",
+  present: true
+};
 
 const videoData = [
   {
@@ -24,31 +28,12 @@ const objectDestructuring = {
   weapon: "candlestick"
 };
 
-const newarray2 = _.filter(videoData, function(value, i) {
-  return value.present;
-});
-
 const map = _.map(newarray2, function(value, i) {
   return value.name;
 });
 console.log(newarray, "filterrrrrr");
 console.log(map, "MAAAAP");
 
-const gameLoop = {
-  // cant write "suspects"
-  suspects: [
-    {
-      name: "rusty",
-      color: "orange"
-    },
-    {
-      name: "Miss Scarlet",
-      color: "red"
-    }
-  ]
-};
-
-console.log(gameLoop.suspects);
 const createObj = () => {
   myObject["character"] = ["John", "Roger", "TheRandomGuy"];
   myObject["room"] = ["kitchen", "bedroom", "livingroom"];
@@ -65,14 +50,6 @@ const createObj = () => {
 
 createObj();
 
-// a revoir const [7,8,9]=["a","b","c"]
-const destructuring = () => {
-  const { room, weapon } = { room: "bathroom", weapon: "candlestick" };
-  console.log(room, weapon, "destructuring");
-};
-
-destructuring();
-
 const loopNestedArray = () => {
   for (let i = 0; i < gameLoop.suspects.length; i++) {
     console.log(gameLoop.suspects[i]);
@@ -80,27 +57,6 @@ const loopNestedArray = () => {
 };
 
 loopNestedArray();
-
-const extractGuilty = () => {
-  for (let i = 0; i < gameLoop.suspects.length; i++) {
-    if (gameLoop.suspects[i].name === "Miss Scarlet") {
-      console.log(gameLoop.suspects[i].name + " is guilty");
-    }
-  }
-};
-
-const destructuringColors = () => {
-  // J'extrait suspects de gameloop
-  const {
-    suspects: [{ name: name1, color: color1 }, { name: name2, color: color2 }]
-  } = gameLoop;
-
-  console.log(name1, color1, name2, color2, "my color");
-};
-
-extractGuilty();
-
-destructuringColors();
 
 _.each = function(list, callback) {
   if (Array.isArray(list)) {
@@ -209,6 +165,14 @@ console.log(addES5(3, 5, "ffff", "es5"));
 
 createTuple("It", "be", "could", "anyone", "no one");
 
+const from = obj => {
+  const newarray = [];
+  for (const key in obj) {
+    newarray.push(Object.values(obj));
+  }
+  return newarray;
+};
+console.log(from(myObject), "return");
 document.getElementById("app").innerHTML = `
  <h1>Hello Vanilla!</h1>
  <div>
@@ -247,3 +211,5 @@ const getLastName = () => {
 };
 
 console.log("RENAMING", weight, connard);
+
+export default gameLoop;
