@@ -1,12 +1,10 @@
-import gameLoop from "./index.js";
+import gameLoop from "./common";
 
 // a revoir const [7,8,9]=["a","b","c"]
 const destructuring = () => {
   const { room, weapon } = { room: "bathroom", weapon: "candlestick" };
   console.log(room, weapon, "destructuring");
 };
-
-destructuring();
 
 const extractGuilty = () => {
   for (let i = 0; i < gameLoop.suspects.length; i++) {
@@ -24,11 +22,11 @@ const destructuringColors = () => {
 
   console.log(name1, color1, name2, color2, "my color");
 };
+const destructuringExercise = () => {
+  destructuring();
+  extractGuilty();
+  destructuringColors();
+  console.log(gameLoop.suspects, "LOOOP");
+};
 
-extractGuilty();
-
-destructuringColors();
-
-console.log(gameLoop.suspects, "LOOOP");
-
-export { destructuring, destructuringColors, extractGuilty };
+export default destructuringExercise;

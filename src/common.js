@@ -11,3 +11,7 @@ const gameLoop = {
     }
   ]
 };
+
+const numberArray = [0, 1, 2];
+
+export { gameLoop, numberArray };

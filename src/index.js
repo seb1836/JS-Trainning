@@ -1,26 +1,13 @@
 import "./styles.css";
 import _ from "underscore";
 import test from "./test";
+import exerciseLoop from "./loopNestedArray";
+import destructuringExercise from "./destructuringExercise";
+import { myfilter, numberArray } from "./filter";
+import eachExercise from "./each";
+import MyMap from "./mapAndEachExercise";
 
-const myObject = {
-  place: "bathroom",
-  time: "8pm",
-  present: true
-};
-
-const videoData = [
-  {
-    name: "billy",
-    present: true
-  },
-  { name: "batman", present: true },
-  { name: "superman", present: false }
-];
-
-const newarray = _.filter(videoData, function(name, i) {
-  return videoData[i].present;
-});
-console.log(newarray, "filterrrrrr");
+const myEmptyObject = {};
 
 const objectDestructuring = {
   name: "Rusty",
@@ -28,90 +15,25 @@ const objectDestructuring = {
   weapon: "candlestick"
 };
 
-const map = _.map(newarray2, function(value, i) {
-  return value.name;
-});
-console.log(newarray, "filterrrrrr");
-console.log(map, "MAAAAP");
-
 const createObj = () => {
-  myObject["character"] = ["John", "Roger", "TheRandomGuy"];
-  myObject["room"] = ["kitchen", "bedroom", "livingroom"];
-  myObject["weapon"] = ["hammer", "knife", "gun"];
+  myEmptyObject["character"] = ["John", "Roger", "TheRandomGuy"];
+  myEmptyObject["room"] = ["kitchen", "bedroom", "livingroom"];
+  myEmptyObject["weapon"] = ["hammer", "knife", "gun"];
 
-  myObject["nestedObj"] = { fields1: "" };
+  myEmptyObject["nestedObj"] = { fields1: "" };
 
-  console.log(myObject);
-  console.log(myObject.nestedObj);
-  console.log(myObject.length);
+  console.log(myEmptyObject);
+  console.log(myEmptyObject.nestedObj);
+  console.log(myEmptyObject.length);
 
   console.log();
 };
 
 createObj();
 
-const loopNestedArray = () => {
-  for (let i = 0; i < gameLoop.suspects.length; i++) {
-    console.log(gameLoop.suspects[i]);
-  }
-};
+exerciseLoop();
 
-loopNestedArray();
-
-_.each = function(list, callback) {
-  if (Array.isArray(list)) {
-    for (let i = 0; i < list.length; i++) {
-      callback(list[i], i, list);
-      console.log(list[i]);
-    }
-  } else {
-    for (const key in list) {
-      callback(list[key], key, list);
-    }
-  }
-};
-
-_.each(["jean", "claude", "van", "damme"], function(name, i, list) {
-  console.log(list, "array");
-  if (list[i + 1]) {
-    console.log(name, "is younger than", list[i + 1]);
-  } else {
-    console.log(name, "is the oldest");
-  }
-});
-
-const MyMap = (array, cb) => {
-  console.log("ENTERING MAP");
-  if (Array.isArray(array)) {
-    const newArray = [];
-    /*for (let i = 0; i < array.length; i++) {
-       console.log("LOOP :", i);
-       const updatedElement = cb(array[i], i, array);
-       newArray.push(updatedElement);
-     }
-     console.log("RETURNING NEW ARRAY");
-     return newArray;*/
-    _.each(array, function(updatedElement, i, list) {
-      newArray.push(updatedElement);
-    });
-    return newArray;
-  } else {
-    for (const key in array) {
-      cb(array[key], key, array);
-    }
-  }
-};
-const myfilter = (array, cb) => {
-  const newArray = [];
-  for (let i = 0; i < array.length; i++) {
-    if (cb(array[i], i, array)) {
-      newArray.push(array[i]);
-    }
-  }
-  return newArray;
-};
-
-const numberArray = [0, 1, 2];
+eachExercise();
 
 myfilter(numberArray, (element, i) => {
   return element > 0;
@@ -158,21 +80,13 @@ function addES5(a, b = 2) {
   console.log(arguments, "es5");
   return a + b;
 }
-
+destructuringExercise();
 // a recheck mettre plus de parametres que prevue ne fais pas
 // planter la function
 console.log(addES5(3, 5, "ffff", "es5"));
 
 createTuple("It", "be", "could", "anyone", "no one");
 
-const from = obj => {
-  const newarray = [];
-  for (const key in obj) {
-    newarray.push(Object.values(obj));
-  }
-  return newarray;
-};
-console.log(from(myObject), "return");
 document.getElementById("app").innerHTML = `
  <h1>Hello Vanilla!</h1>
  <div>
@@ -211,5 +125,3 @@ const getLastName = () => {
 };
 
 console.log("RENAMING", weight, connard);
-
-export default gameLoop;
