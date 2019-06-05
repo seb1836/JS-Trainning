@@ -1,3 +1,5 @@
+import { createNumberArray } from "./common";
+
 const myfilter = (array, cb) => {
   const newArray = [];
   for (let i = 0; i < array.length; i++) {
@@ -7,5 +9,11 @@ const myfilter = (array, cb) => {
   }
   return newArray;
 };
+const filterExercise = () => {
+  const numberArray = createNumberArray();
+  myfilter(numberArray, (element, i) => {
+    return element > 0;
+  });
+};
 
-export { myfilter };
+export default filterExercise;

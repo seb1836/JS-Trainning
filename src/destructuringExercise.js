@@ -1,5 +1,12 @@
-import gameLoop from "./common";
+import { createGameLoop } from "./common";
 
+const objectDestructuring = {
+  name: "Rusty",
+  room: "bathroom",
+  weapon: "candlestick"
+};
+
+const gameLoop = createGameLoop();
 // a revoir const [7,8,9]=["a","b","c"]
 const destructuring = () => {
   const { room, weapon } = { room: "bathroom", weapon: "candlestick" };

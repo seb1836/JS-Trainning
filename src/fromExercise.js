@@ -4,11 +4,14 @@ const myObject = {
   present: true
 };
 
-const from = obj => {
-  const newarray = [];
-  for (const key in obj) {
-    newarray.push(Object.values(obj));
-  }
-  return newarray;
+const fromExercise = () => {
+  const from = obj => {
+    const newarray = [];
+    for (const key in obj) {
+      return Object.values(obj);
+    }
+  };
+  console.log(from(myObject), "return");
 };
-console.log(from(myObject), "return");
+
+export default fromExercise;
