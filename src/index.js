@@ -4,7 +4,7 @@ import test from "./test";
 import destructuringExercise from "./destructuringExercise";
 import filterExercise, { myfilter, numberArray } from "./filter";
 import eachExercise from "./each";
-import MyMap from "./mapAndEachExercise";
+import mapWithEach from "./mapAndEachExercise";
 import exerciseLoop from "./loopNestedArray";
 import mapBrokenWeapon from "./mapWeaponBreaker";
 import objectExercise from "./objectExercise";
@@ -26,6 +26,8 @@ functionExercise();
 destructuringExercise();
 
 fromExercise();
+
+mapWithEach();
 
 document.getElementById("app").innerHTML = `
  <h1>Hello Vanilla!</h1>
