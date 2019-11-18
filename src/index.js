@@ -10,7 +10,7 @@ import mapBrokenWeapon from "./mapWeaponBreaker";
 import objectExercise from "./objectExercise";
 import functionExercise from "./functionExercise.js";
 import fromExercise from "./fromExercise";
-
+import arrayExercises from "./arrayExercise";
 objectExercise();
 
 exerciseLoop();
@@ -28,6 +28,8 @@ destructuringExercise();
 fromExercise();
 
 mapWithEach();
+
+arrayExercises();
 
 document.getElementById("app").innerHTML = `
  <h1>Hello Vanilla!</h1>
