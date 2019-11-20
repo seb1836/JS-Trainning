@@ -1,6 +1,8 @@
 const simpleArray = [1, 2, 3, 4, 5];
 const nestedArray = [1, 2, 3, [4]];
-const emptyArray = [];
+const myString2 = "fsfsad";
+const myMap = Array.prototype.map;
+
 const arrayCloner = array => {
   const clonedArray = array.map(entry => {
     return entry;
@@ -17,6 +19,7 @@ const arrayExtractor = (array, index) => {
   console.log(extractedArray);
   return extractedArray;
 };
+
 const arrayExercises = () => {
   console.log(arrayCloner(simpleArray), "simple");
   console.log(arrayCloner(nestedArray), "nested");

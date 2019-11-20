@@ -11,6 +11,8 @@ import objectExercise from "./objectExercise";
 import functionExercise from "./functionExercise.js";
 import fromExercise from "./fromExercise";
 import arrayExercises from "./arrayExercise";
+import { numbersEven } from "./common";
+
 objectExercise();
 
 exerciseLoop();
@@ -31,10 +33,17 @@ mapWithEach();
 
 arrayExercises();
 
+const numbersEven2 = event => {
+  alert("lol");
+  // if (event.target.value % 2 === 0) {
+  // arrayEven.push(event.target.value, "-");
+  // event.currentTarget.value = arrayEven;
+  document.getElementById("even").innerHTML = "3543";
+};
+
 document.getElementById("app").innerHTML = `
  <h1>Hello Vanilla!</h1>
  <div>
-   We use Parcel to bundle this sandbox, you can find more info about Parcel
-   <a href="https:parceljs.org" target="_blank" rel="noopener noreferrer">here</a>.
+   
  </div>
  `;

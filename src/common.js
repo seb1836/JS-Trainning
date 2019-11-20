@@ -1,3 +1,5 @@
+const arrayEven = [];
+
 const createGameLoop = () => {
   // cant write "suspects"
   return {
@@ -15,4 +17,12 @@ const createNumberArray = () => {
   return [0, 1, 2];
 };
 
-export { createGameLoop, createNumberArray };
+const numbersEven = event => {
+  alert("lol");
+  // if (event.target.value % 2 === 0) {
+  // arrayEven.push(event.target.value, "-");
+  // event.currentTarget.value = arrayEven;
+  document.getElementById("even").innerHTML = "3543";
+};
+
+export { createGameLoop, createNumberArray, numbersEven };
