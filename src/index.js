@@ -34,7 +34,6 @@ mapWithEach();
 arrayExercises();
 
 const numbersEven2 = event => {
-  alert("lol");
   // if (event.target.value % 2 === 0) {
   // arrayEven.push(event.target.value, "-");
   // event.currentTarget.value = arrayEven;
