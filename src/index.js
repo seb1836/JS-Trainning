@@ -12,6 +12,7 @@ import functionExercise from "./functionExercise.js";
 import fromExercise from "./fromExercise";
 import arrayExercises from "./arrayExercise";
 import { numbersEven } from "./common";
+import {requestBuilder, requestSender} from "./ajaxExercise"
 
 objectExercise();
 
@@ -33,16 +34,24 @@ mapWithEach();
 
 arrayExercises();
 
+requestBuilder()
+
 const numbersEven2 = event => {
   // if (event.target.value % 2 === 0) {
   // arrayEven.push(event.target.value, "-");
   // event.currentTarget.value = arrayEven;
-  document.getElementById("even").innerHTML = "3543";
+  document.getElementById("even").value = "3543";
+  console.log("123try");
 };
+document.getElementById("mybutton").addEventListener("click",numbersEven2)
+console.log(window["2"+"1"])
 
+document.getElementById("ajaxButton").addEventListener("click",requestSender)
 document.getElementById("app").innerHTML = `
  <h1>Hello Vanilla!</h1>
  <div>
    
  </div>
  `;
+
+export default numbersEven2;
