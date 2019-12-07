@@ -34,7 +34,7 @@ mapWithEach();
 
 arrayExercises();
 
-requestBuilder()
+//requestBuilder()
 
 const numbersEven2 = event => {
   // if (event.target.value % 2 === 0) {
@@ -46,7 +46,7 @@ const numbersEven2 = event => {
 document.getElementById("mybutton").addEventListener("click",numbersEven2)
 console.log(window["2"+"1"])
 
-document.getElementById("ajaxButton").addEventListener("click",requestSender)
+
 document.getElementById("app").innerHTML = `
  <h1>Hello Vanilla!</h1>
  <div>
