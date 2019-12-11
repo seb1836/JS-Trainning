@@ -16,6 +16,12 @@ const arrayCloner = array => {
   });
   return clonedArray;
 };
+
+const returnRandomentry = array => {
+  let index = Math.floor(Math.random() * Math.floor(array.length - 1));
+  console.log(index);
+  return array[index];
+};
 const arrayExtractor = (array, index) => {
   if (index === 0 || index === undefined) {
     return array.shift();
@@ -41,6 +47,7 @@ const arrayExercises = () => {
   console.log(arrayCloner(nestedArray), "nested");
   console.log(arrayExtractor(simpleArray, 3));
   console.log(displayElementOfNestedArray(nestedArray2), "display nested");
+  console.log(returnRandomentry(simpleArray), "random");
 };
 
 export default arrayExercises;
