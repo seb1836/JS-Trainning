@@ -33,6 +33,22 @@ const arrayExtractor = (array, index) => {
   return extractedArray;
 };
 
+const arrayRange = (startingvalue, arraylength) => {
+  let value = startingvalue;
+  let returnedArray = [startingvalue];
+  returnedArray.forEach(() => {
+    value++;
+    returnedArray.push(value);
+    console.log(
+      returnedArray,
+      returnedArray.length,
+      "lenght",
+      arraylength !== returnedArray.length
+    );
+  });
+  return returnedArray;
+};
+
 const findDifference = (array1, array2) => {
   const array1flattened = array1.flat(Infinity);
   const array2flattened = array2.flat(Infinity);
@@ -58,6 +74,7 @@ const arrayExercises = () => {
   console.log(displayElementOfNestedArray(nestedArray2), "display nested");
   console.log(returnRandomentry(simpleArray), "random");
   console.log(findDifference(simpleArray, nestedArray2), "differences");
+  console.log(arrayRange(-3, 4), "arrayRange");
 };
 
 export default arrayExercises;

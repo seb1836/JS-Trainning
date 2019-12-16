@@ -12,7 +12,7 @@ import functionExercise from "./functionExercise.js";
 import fromExercise from "./fromExercise";
 import arrayExercises from "./arrayExercise";
 import { numbersEven } from "./common";
-import {requestBuilder, requestSender} from "./ajaxExercise"
+import { requestBuilder, requestSender } from "./ajaxExercise";
 
 objectExercise();
 
@@ -43,9 +43,8 @@ const numbersEven2 = event => {
   document.getElementById("even").value = "3543";
   console.log("123try");
 };
-document.getElementById("mybutton").addEventListener("click",numbersEven2)
-console.log(window["2"+"1"])
-
+document.getElementById("mybutton").addEventListener("click", numbersEven2);
+console.log(window["2" + "1"]);
 
 document.getElementById("app").innerHTML = `
  <h1>Hello Vanilla!</h1>
